@@ -1,0 +1,37 @@
+[
+    {
+        "icon": "credit_card",
+        "title": "Development",
+        "isSelected": true
+    },
+    {
+        "icon": "event",
+        "title": "Web Development",
+        "isSelected": false
+    },
+    {
+        "icon": "image_aspect_ratio",
+        "title": "Data Science",
+        "isSelected": false
+    },
+    {
+        "icon": "smartphone",
+        "title": "Mobile Apps",
+        "isSelected": false
+    },
+    {
+        "icon": "event",
+        "title": "Programming Languages",
+        "isSelected": false
+    },
+    {
+        "icon": "videogame_asset",
+        "title": "Game Development",
+        "isSelected": false
+    },
+    {
+        "icon": "storage",
+        "title": "Databases",
+        "isSelected": false
+    }
+]

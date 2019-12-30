@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Academind by Maximilian",
+        "title": "React, React Hooks",
+        "studentsCount": "791,677",
+        "coursesCount": 22,
+        "imagePath": "./Maximilian.jpg"
+    },
+    {
+        "name": "Stephen Grider",
+        "title": "React, Redux Framework",
+        "studentsCount": "495,239",
+        "coursesCount": 24,
+        "imagePath": "./Stephen.jpg"
+    },
+    {
+        "name": "Jonas Shmedtmann",
+        "title": "Javascript, CSS",
+        "studentsCount": "654,898",
+        "coursesCount": 5,
+        "imagePath": "./Jonas.jpg"
+    },
+    {
+        "name": "Angela Yu",
+        "title": "Javascript, MongoDB",
+        "studentsCount": "323,885",
+        "coursesCount": 7,
+        "imagePath": "./Angela.jpg"
+    }
+]
