@@ -1,15 +1,16 @@
 import React from 'react'
 import './App.css'
-import NavBar from './Navbar/Navbar'
-import Topics from './Topics'
-import Instructors from './Instructors/Instructors'
+import Home from './Home'
+import Authors from './Authors'
+import { Route, Switch } from 'react-router-dom'
 
 function App() {
     return (
         <div>
-            <NavBar />
-            <Topics />
-            <Instructors />
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/author" component={Authors} />
+            </Switch>
         </div>
     )
 }

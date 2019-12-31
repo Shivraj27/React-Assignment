@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card'
 import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import InstructorItems from './Authors.json'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
     title: {
@@ -62,34 +63,35 @@ const Instructors = () => {
     return (
         <div>
             <span className={classes.title}>Popular Instructors </span>
-
-            <div className={classes.container}>
-                {InstructorItems.map((instructor, index) => {
-                    console.log(instructor.imagePath)
-                    return (
-                        <Card key={index} className={classes.card}>
-                            <CardMedia
-                                className={classes.media}
-                                image={require(`${instructor.imagePath}`)}
-                                component="div"
-                            />
-                            <CardContent>
-                                <b className={classes.author}>
-                                    {instructor.name}
-                                </b>
-                                <p>{instructor.title}</p>
-                                <div className={classes.footer}>
-                                    <span>
-                                        <b>{instructor.studentsCount}</b>
-                                        &nbsp;students
-                                    </span>
-                                    <p>{instructor.coursesCount} courses</p>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    )
-                })}
-            </div>
+            <Link to="/author">
+                <div className={classes.container}>
+                    {InstructorItems.map((instructor, index) => {
+                        console.log(instructor.imagePath)
+                        return (
+                            <Card key={index} className={classes.card}>
+                                <CardMedia
+                                    className={classes.media}
+                                    image={require(`${instructor.imagePath}`)}
+                                    component="div"
+                                />
+                                <CardContent>
+                                    <b className={classes.author}>
+                                        {instructor.name}
+                                    </b>
+                                    <p>{instructor.title}</p>
+                                    <div className={classes.footer}>
+                                        <span>
+                                            <b>{instructor.studentsCount}</b>
+                                            &nbsp;students
+                                        </span>
+                                        <p>{instructor.coursesCount} courses</p>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        )
+                    })}
+                </div>
+            </Link>
         </div>
     )
 }
