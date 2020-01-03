@@ -1,0 +1,90 @@
+[
+    {
+        "category": "Development",
+        "subCategory": "Development",
+        "topics": [
+            "JavaScript",
+            "Angular",
+            "React",
+            "CSS",
+            "Unity",
+            "HTML5",
+            "VueJS"
+        ]
+    },
+    {
+        "category": "Development",
+        "subCategory": "Web Development",
+        "topics": [
+            "JavaScript",
+            "Angular",
+            "React",
+            "CSS",
+            "HTML5",
+            "PHP",
+            "VueJS"
+        ]
+    },
+    {
+        "category": "Development",
+        "subCategory": "Data Science",
+        "topics": [
+            "Data Science",
+            "Machine Learning",
+            "Python",
+            "Deep Learning",
+            "Data Analysis",
+            "Artificial Intelligence"
+        ]
+    },
+    {
+        "category": "Development",
+        "subCategory": "Mobile Apps",
+        "topics": [
+            "Android Development",
+            "iOS Development",
+            "Google Flutter",
+            "Swift"
+        ]
+    },
+    {
+        "category": "Development",
+        "subCategory": "Programming Languages",
+        "topics": [
+            "Python",
+            "Java",
+            "JavaScript",
+            "React",
+            "C#",
+            "C++",
+            "Spring Framework",
+            "Go Programming Language"
+        ]
+    },
+    {
+        "category": "Development",
+        "subCategory": "Game Development",
+        "topics": [
+            "Unity",
+            "C#",
+            "Game Development Fundamentals",
+            "Unreal Engine",
+            "C++",
+            "3D Game Development"
+        ]
+    },
+    {
+        "category": "Development",
+        "subCategory": "Databases",
+        "topics": [
+            "SQL",
+            "MySQL",
+            "MongoDB",
+            "Oracle SQL",
+            "SQL Server",
+            "Oracle Certification",
+            "Apache Kafka",
+            "Database Management"
+        ]
+    }
+]

@@ -6,6 +6,7 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
+import AuthorInfoDetails from './authors.json'
 
 const useStyles = makeStyles(theme => ({
     header: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     },
     container: {
         paddingLeft: '10pc',
-        paddingTop: '1pc',
+        paddingTop: '3pc',
     },
     user: {
         display: 'flex',
@@ -76,6 +77,7 @@ const useStyles = makeStyles(theme => ({
 
 const AuthorsInfo = () => {
     const classes = useStyles()
+    const socialLinks
     return (
         <div className="parentContainer">
             <div className={classes.header}>
@@ -102,12 +104,14 @@ const AuthorsInfo = () => {
                         Send Message
                     </button>
                     <div className={classes.socialLinks}>
-                        <FontAwesomeIcon
-                            className={classes.links}
-                            icon={faGlobe}
-                            size="1x"
-                            color="#007791"
-                        />
+                        <a href="https://i.udemycdn.com/user/200_H/31926668_94e7_6.jpg">
+                            <FontAwesomeIcon
+                                className={classes.links}
+                                icon={faGlobe}
+                                size="1x"
+                                color="#007791"
+                            />
+                        </a>
                         <FontAwesomeIcon
                             className={classes.links}
                             icon={faTwitter}
@@ -128,7 +132,7 @@ const AuthorsInfo = () => {
                         />
                     </div>
                 </div>
-                <div className="col-sm-9">
+                <div className="col-sm-9" style={{ paddingRight: '10pc' }}>
                     <div
                         style={{
                             fontSize: '15px',
