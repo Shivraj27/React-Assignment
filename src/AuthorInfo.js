@@ -6,7 +6,6 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
-import AuthorInfoDetails from './authors.json'
 
 const useStyles = makeStyles(theme => ({
     header: {
@@ -75,25 +74,37 @@ const useStyles = makeStyles(theme => ({
     },
 }))
 
-const AuthorsInfo = () => {
+const getIcon = icon => {
+    switch (icon) {
+        case 'faGlobe':
+            return faGlobe
+        case 'faTwitter':
+            return faTwitter
+        case 'faFacebook':
+            return faFacebookF
+        case 'faYoutube':
+            return faYoutube
+        default:
+            return faGlobe
+    }
+}
+
+const AuthorsInfo = props => {
     const classes = useStyles()
-    const socialLinks
+    const author = props.data.location.state.author
+    const imageSource = process.env.PUBLIC_URL + '/images/' + author.profile
     return (
         <div className="parentContainer">
             <div className={classes.header}>
                 <div className={classes.titleInfo}>
-                    <h2>Academind by Maximilian Schwarzmüller</h2>
-                    <span style={{ fontSize: '18px' }}>Online Education</span>
+                    <h2>{author.name}</h2>
+                    <span style={{ fontSize: '18px' }}>{author.title}</span>
                 </div>
             </div>
             <div className={classes.container}>
                 <div className="col-sm-3">
                     <div className={classes.user}>
-                        <img
-                            alt="Academind by Maximilian Schwarzmüller"
-                            className={classes.avatar}
-                            src="https://i.udemycdn.com/user/200_H/31926668_94e7_6.jpg"
-                        />
+                        <img alt={author.name} className={classes.avatar} src={imageSource} />
                     </div>
                     <button
                         type="button"
@@ -104,32 +115,18 @@ const AuthorsInfo = () => {
                         Send Message
                     </button>
                     <div className={classes.socialLinks}>
-                        <a href="https://i.udemycdn.com/user/200_H/31926668_94e7_6.jpg">
-                            <FontAwesomeIcon
-                                className={classes.links}
-                                icon={faGlobe}
-                                size="1x"
-                                color="#007791"
-                            />
-                        </a>
-                        <FontAwesomeIcon
-                            className={classes.links}
-                            icon={faTwitter}
-                            size="1x"
-                            color="#007791"
-                        />
-                        <FontAwesomeIcon
-                            className={classes.links}
-                            icon={faFacebookF}
-                            size="1x"
-                            color="#007791"
-                        />
-                        <FontAwesomeIcon
-                            className={classes.links}
-                            icon={faYoutube}
-                            size="1x"
-                            color="#007791"
-                        />
+                        {author.social.map(item => {
+                            return (
+                                <a href={item.url}>
+                                    <FontAwesomeIcon
+                                        className={classes.links}
+                                        icon={getIcon(item.icon)}
+                                        size="1x"
+                                        color="#007791"
+                                    />
+                                </a>
+                            )
+                        })}
                     </div>
                 </div>
                 <div className="col-sm-9" style={{ paddingRight: '10pc' }}>
@@ -141,22 +138,9 @@ const AuthorsInfo = () => {
                         }}
                     >
                         <p></p>
-                        <p>
-                            Bundling the courses and know how of successful
-                            instructors, Academind strives to deliver high
-                            quality online education.&nbsp;
-                        </p>
-                        <p>
-                            Online Education, Real-Life Success - that's what
-                            Academind stands for. Learn topics like web
-                            development, data analyses and more in a fun and
-                            engaging way.
-                        </p>
-                        <p>
-                            Currently, you can find courses published by
-                            Maximilian Schwarzmüller and Manuel Lorenz, more
-                            instructors to come!
-                        </p>
+                        <p>{author.description.intro}&nbsp;</p>
+                        <p>{author.description.skills}</p>
+                        <p>{author.description.important}</p>
                         <p>Keep learning!</p>
                         <p></p>
                     </div>
@@ -165,15 +149,21 @@ const AuthorsInfo = () => {
                             <div style={{ fontSize: '65%' }}>
                                 Total students
                             </div>
-                            <div className="a2">792,509</div>
+                            <div className="a2">
+                                {author.description.studentsCount}
+                            </div>
                         </li>
                         <li>
                             <div style={{ fontSize: '65%' }}>Courses</div>
-                            <div className="a2">22</div>
+                            <div className="a2">
+                                {author.description.coursesCount}
+                            </div>
                         </li>
                         <li>
                             <div style={{ fontSize: '65%' }}>Reviews</div>
-                            <div className="a2">161,828</div>
+                            <div className="a2">
+                                {author.description.reviews}
+                            </div>
                         </li>
                     </ul>
                 </div>

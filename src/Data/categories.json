@@ -2,6 +2,8 @@
     {
         "category": "Development",
         "subCategory": "Development",
+        "isSelected": true,
+        "icon": "credit_card",
         "topics": [
             "JavaScript",
             "Angular",
@@ -15,6 +17,8 @@
     {
         "category": "Development",
         "subCategory": "Web Development",
+        "isSelected": false,
+        "icon": "event",
         "topics": [
             "JavaScript",
             "Angular",
@@ -28,6 +32,8 @@
     {
         "category": "Development",
         "subCategory": "Data Science",
+        "isSelected": false,
+        "icon": "image_aspect_ratio",
         "topics": [
             "Data Science",
             "Machine Learning",
@@ -40,6 +46,8 @@
     {
         "category": "Development",
         "subCategory": "Mobile Apps",
+        "isSelected": false,
+        "icon": "smartphone",
         "topics": [
             "Android Development",
             "iOS Development",
@@ -50,6 +58,8 @@
     {
         "category": "Development",
         "subCategory": "Programming Languages",
+        "isSelected": false,
+        "icon": "event",
         "topics": [
             "Python",
             "Java",
@@ -64,6 +74,8 @@
     {
         "category": "Development",
         "subCategory": "Game Development",
+        "isSelected": false,
+        "icon": "videogame_asset",
         "topics": [
             "Unity",
             "C#",
@@ -76,6 +88,8 @@
     {
         "category": "Development",
         "subCategory": "Databases",
+        "isSelected": false,
+        "icon": "storage",
         "topics": [
             "SQL",
             "MySQL",

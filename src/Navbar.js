@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import MaterialIcon from 'material-icons-react'
 import IconButton from '@material-ui/core/IconButton'
 import { withStyles } from '@material-ui/core/styles'
 import { makeStyles } from '@material-ui/core/styles'
-import NavItems from './Navbar.json'
+import NavItems from './Data/categories.json'
+import Topics from './Topics'
 
 const useStyles = makeStyles(theme => ({
     rightToolbar: {
@@ -28,6 +29,9 @@ const useStyles = makeStyles(theme => ({
     },
     menuIcon: {
         padding: '5px',
+        '&:hover': {
+            background: 'none',
+        },
     },
     fontSize: {
         fontSize: '15px',
@@ -38,24 +42,31 @@ const useStyles = makeStyles(theme => ({
     },
 }))
 
-const NavBar = () => {
+const NavBar = props => {
     const classes = useStyles()
+    const [topicsList, settopicsList] = useState(NavItems[0].topics)
     return (
         <div>
             <AppBar position="static" className={classes.container}>
                 <Toolbar>
                     {NavItems.map((item, index) => {
                         return (
-                            <div key={index} className={classes.menuItem}>
+                            <div
+                                key={index}
+                                onClick={() =>
+                                    settopicsList(NavItems[1].topics)
+                                }
+                                className={classes.menuItem}
+                            >
                                 <IconButton className={classes.menuIcon}>
                                     <MaterialIcon icon={item.icon} />
                                 </IconButton>
                                 {item.isSelected ? (
                                     <b className={classes.fontSize}>
-                                        {item.title}
+                                        {item.subCategory}
                                     </b>
                                 ) : (
-                                    <span>{item.title}</span>
+                                    <span>{item.subCategory}</span>
                                 )}
                             </div>
                         )
@@ -68,6 +79,7 @@ const NavBar = () => {
                     </section>
                 </Toolbar>
             </AppBar>
+            {props.isTopics ? <Topics topics={topicsList} /> : ''}
         </div>
     )
 }

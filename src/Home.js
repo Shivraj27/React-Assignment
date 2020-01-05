@@ -1,13 +1,11 @@
 import React from 'react'
-import NavBar from './Navbar/Navbar'
-import Topics from './Topics'
-import Instructors from './Instructors/Instructors'
+import NavBar from './Navbar'
+import Instructors from './Instructors'
 
 function Home() {
     return (
         <div>
-            <NavBar />
-            <Topics />
+            <NavBar isTopics={true} />
             <Instructors />
         </div>
     )

@@ -2,7 +2,6 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import { withStyles } from '@material-ui/core/styles'
 import { makeStyles } from '@material-ui/core/styles'
-import TopicsList from './categories.json'
 
 const useStyles = makeStyles(theme => ({
     title: {
@@ -40,13 +39,13 @@ const useStyles = makeStyles(theme => ({
     },
 }))
 
-const Topics = () => {
+const Topics = (props) => {
     const classes = useStyles()
     return (
         <div>
             <span className={classes.title}>Popular topics </span>
             <div className={classes.container}>
-                {TopicsList[0].topics.map((topic, index) => {
+                {props.topics && props.topics.map((topic, index) => {
                     return (
                         <label
                             className={classes.topicLabel}
