@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import Home from './Home'
-import Authors from './Authors'
+import Authors from './Containers/Components/Author/Authors'
 import { Route, Switch } from 'react-router-dom'
 
 function App() {

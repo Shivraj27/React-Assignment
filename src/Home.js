@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBar from './Navbar'
-import Instructors from './Instructors'
+import NavBar from './Containers/Components/Navbar/Navbar'
+import Instructors from './Containers/Components/Instructor/Instructors'
 
 function Home() {
     return (

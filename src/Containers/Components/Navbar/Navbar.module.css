@@ -1,0 +1,31 @@
+.rightToolbar {
+    margin-left: auto;
+    margin-right: -12;
+}
+.menuItem {
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    cursor: pointer;
+    padding: 5px !important;
+}
+.menuItem:hover {
+    background-color: #e8e9eb !important;
+}
+.menuIcon {
+    padding: 5px !important;
+}
+.menuIcon:hover {
+    background: none !important;
+}
+.fontSize {
+    font-size: 15px;
+}
+.container {
+    color: #686f7a !important;
+    background-color: #f7f8fa !important;
+}
