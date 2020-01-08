@@ -1,78 +1,11 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { makeStyles } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
-
-const useStyles = makeStyles(theme => ({
-    header: {
-        backgroundColor: '#007791!important',
-        color: '#fff',
-        height: '137px',
-        display: 'flex',
-    },
-    titleInfo: {
-        paddingLeft: '10pc',
-        paddingTop: '1pc',
-    },
-    container: {
-        paddingLeft: '10pc',
-        paddingTop: '3pc',
-    },
-    user: {
-        display: 'flex',
-        justifyContent: 'center',
-    },
-    avatar: {
-        width: '50%',
-        height: '50%',
-        borderRadius: '50%',
-    },
-    button: {
-        color: '#fff',
-        backgroundColor: '#ec5252',
-        margin: '20px auto 0',
-        border: '1px solid transparent',
-        width: '100%',
-        fontWeight: '600',
-        cursor: 'pointer',
-        whiteSpace: 'nowrap',
-        padding: '11px 12px',
-        fontSize: '15px',
-        lineHeight: 1.35135,
-        borderRadius: '2px',
-        display: 'block',
-    },
-    socialLinks: {
-        margin: '20px 0 0',
-        textAlign: 'center',
-    },
-    links: {
-        fontSize: '21px',
-        lineHeight: '35px',
-        margin: '0 7px',
-    },
-    '@global': {
-        ul: {
-            textAlign: 'center',
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            marginTop: '30px',
-            listStyle: 'none',
-            padding: 0,
-        },
-        li: {
-            borderLeft: '1px solid rgba(41,48,59,.25)',
-            padding: '0 15px',
-            textAlign: 'left',
-            fontSize: '22px',
-        },
-    },
-}))
+import Styles from './Author.module.css'
 
 const getIcon = icon => {
     switch (icon) {
@@ -90,36 +23,39 @@ const getIcon = icon => {
 }
 
 const AuthorsInfo = props => {
-    const classes = useStyles()
     const author = props.data.location.state.author
     const imageSource = process.env.PUBLIC_URL + '/images/' + author.profile
     return (
         <div className="parentContainer">
-            <div className={classes.header}>
-                <div className={classes.titleInfo}>
+            <div className={Styles.header}>
+                <div className={Styles.titleInfo}>
                     <h2>{author.name}</h2>
                     <span style={{ fontSize: '18px' }}>{author.title}</span>
                 </div>
             </div>
-            <div className={classes.container}>
+            <div className={Styles.container}>
                 <div className="col-sm-3">
-                    <div className={classes.user}>
-                        <img alt={author.name} className={classes.avatar} src={imageSource} />
+                    <div className={Styles.user}>
+                        <img
+                            alt={author.name}
+                            className={Styles.avatar}
+                            src={imageSource}
+                        />
                     </div>
                     <button
                         type="button"
                         variant="text"
-                        className={classes.button}
+                        className={Styles.button}
                         component="span"
                     >
                         Send Message
                     </button>
-                    <div className={classes.socialLinks}>
+                    <div className={Styles.socialLinks}>
                         {author.social.map(item => {
                             return (
                                 <a href={item.url}>
                                     <FontAwesomeIcon
-                                        className={classes.links}
+                                        className={Styles.links}
                                         icon={getIcon(item.icon)}
                                         size="1x"
                                         color="#007791"
@@ -172,4 +108,4 @@ const AuthorsInfo = props => {
     )
 }
 
-export default withStyles(useStyles)(AuthorsInfo)
+export default AuthorsInfo
