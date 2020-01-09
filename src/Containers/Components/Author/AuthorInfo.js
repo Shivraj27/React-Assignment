@@ -1,5 +1,4 @@
 import React from 'react'
-import { withStyles } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
@@ -28,7 +27,7 @@ const AuthorsInfo = props => {
     return (
         <div className="parentContainer">
             <div className={Styles.header}>
-                <div className={Styles.titleInfo}>
+                <div style={{ padding: '1pc 0 0 10pc' }}>
                     <h2>{author.name}</h2>
                     <span style={{ fontSize: '18px' }}>{author.title}</span>
                 </div>

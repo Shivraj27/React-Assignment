@@ -23,8 +23,6 @@
     position: relative;
     vertical-align: top;
     text-align: center;
-    background-color: #fff;
-    border-bottom: none;
 }
 .card:hover {
     outline: 0;

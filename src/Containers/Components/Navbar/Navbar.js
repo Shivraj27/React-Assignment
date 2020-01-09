@@ -22,7 +22,7 @@ const NavBar = props => {
     const [topicsList, settopicsList] = useState(NavItems[0].topics)
     return (
         <div>
-            <AppBar position="static" className={Styles.container}>
+            <AppBar position="static" className={Styles.navbarContainer}>
                 <Toolbar>
                     {NavItems.map((item, index) => {
                         return (
@@ -48,7 +48,7 @@ const NavBar = props => {
                         )
                     })}
 
-                    <section className={Styles.rightToolbar}>
+                    <section style={{ marginLeft: 'auto' }}>
                         <IconButton color="inherit" aria-label="More Options">
                             <MaterialIcon icon="more_vert" />
                         </IconButton>
